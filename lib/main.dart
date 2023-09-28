@@ -1,4 +1,7 @@
+import 'package:expenses/widgets/new_transaction.dart';
+
 import 'package:flutter/material.dart';
+import './widgets/user_transactions.dart';
 
 /////changes\
 ////////sarun branch
@@ -24,26 +27,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
+  // String titleInput;
+  //String amountInput;
+  // final titleController = TextEditingController();
+  //final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter App'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.blue,
-                child: Text('CHART!'),
-                elevation: 5,
-              ),
+      appBar: AppBar(
+        title: Text('Flutter App'),
+      ),
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.blue,
+              child: Text('CHART!'),
+              elevation: 5,
             ),
-            Card(
-              child: Text('LIST OF TX'),
-            ),
-          ],
-        ));
+          ),
+          UserTransactions()
+        ],
+      ),
+    );
   }
 }
